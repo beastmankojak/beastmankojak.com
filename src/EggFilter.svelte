@@ -3,6 +3,7 @@
   export let perfect;
   export let xChromo;
   export let yChromo;
+  export let sort;
 </script>
 
 <div>
@@ -50,6 +51,13 @@
     <li>
       <label for="parentTextbox">Parent</label>
       <input type="text" id="parentTextbox" bind:value={yChromo} />
+    </li>
+    <li>
+      <label for="sortDropdown">Sort</label>
+      <select bind:value={sort} id="sortDropdown">
+        <option value="eggIdAsc">Egg Id ⬆️</option>
+        <option value="eggIdDesc">Egg Id ⬇️</option>
+      </select>
     </li>
   </ul>
   <button on:click>LFG</button>

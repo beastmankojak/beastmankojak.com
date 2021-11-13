@@ -12,6 +12,7 @@
     xChromo: "",
     yChromo: "",
   };
+  let sort = "eggIdAsc";
 
   const fetchEggs = async () => {
     try {
@@ -29,6 +30,9 @@
       }
       if (filter.yChromo) {
         qs.push(`yChromo=${filter.yChromo}`);
+      }
+      if (sort) {
+        qs.push(`sort=${sort}`);
       }
 
       const baseUrl =
@@ -56,6 +60,7 @@
     bind:perfect={filter.perfect}
     bind:xChromo={filter.xChromo}
     bind:yChromo={filter.yChromo}
+    bind:sort
   />
   {#if eggsLoading}
     <h2>Loading...</h2>

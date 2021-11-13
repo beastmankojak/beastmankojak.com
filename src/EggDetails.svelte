@@ -14,14 +14,16 @@
     <li><span>&nbsp;X Chromosome:</span> {egg.xChromo}</li>
     <li><span>&nbsp;Y Chromosome:</span> {egg.yChromo}</li>
   </ul>
-  <img
-    class="sm"
-    src="https://ipfs.blockfrost.dev/ipfs/{ipfsParent()}"
-    alt="derp"
-  />
-  <ul>
-    <li>{egg.parent.name}</li>
-  </ul>
+  {#if egg.parent}
+    <img
+      class="sm"
+      src="https://ipfs.blockfrost.dev/ipfs/{ipfsParent()}"
+      alt="derp"
+    />
+    <ul>
+      <li>{egg.parent.name}</li>
+    </ul>
+  {/if}
 </div>
 
 <style>
