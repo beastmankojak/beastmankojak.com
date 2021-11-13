@@ -31,7 +31,10 @@
         qs.push(`yChromo=${filter.yChromo}`);
       }
 
-      const baseUrl = "http://localhost:3000/derp-eggs/";
+      const baseUrl =
+        process.env.NODE_ENV === "prod"
+          ? "https://www.beastmankojak.com/api/derp-eggs"
+          : "http://localhost:3000/derp-eggs/";
       const response = await fetch(
         qs.length ? `${baseUrl}?${qs.join("&")}` : baseUrl
       );

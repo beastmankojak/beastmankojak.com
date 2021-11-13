@@ -5,11 +5,14 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
+    "dockerBuild": "docker build -f docker/Dockerfile -t beastmankojak/bk-web .",
+    "dockerPush": "docker push beastmankojak/bk-web:latest",
     "start": "sirv public --no-clear --host --cors"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
+    "@rollup/plugin-replace": "^3.0.0",
     "rollup": "^2.3.4",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.0",
