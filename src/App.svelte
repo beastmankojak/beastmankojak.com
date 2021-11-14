@@ -13,35 +13,24 @@
     yChromo: "",
   };
   let sort = "eggIdAsc";
+  let page = 1;
+  let currentFilter;
 
-  const fetchEggs = async () => {
+  const baseUrl =
+    process.env.NODE_ENV === "prod"
+      ? "https://www.beastmankojak.com/api/derp-eggs"
+      : "http://localhost:3000/derp-eggs/";
+
+  const doFetch = async (qs) => {
+    console.log(qs);
     try {
       eggsLoading = true;
       eggsError = "";
-      const qs = [];
-      if (filter.symbol) {
-        qs.push(`symbol=${filter.symbol}`);
-      }
-      if (filter.perfect) {
-        qs.push(`perfect=${filter.perfect}`);
-      }
-      if (filter.xChromo) {
-        qs.push(`xChromo=${filter.xChromo}`);
-      }
-      if (filter.yChromo) {
-        qs.push(`yChromo=${filter.yChromo}`);
-      }
-      if (sort) {
-        qs.push(`sort=${sort}`);
-      }
 
-      const baseUrl =
-        process.env.NODE_ENV === "prod"
-          ? "https://www.beastmankojak.com/api/derp-eggs"
-          : "http://localhost:3000/derp-eggs/";
       const response = await fetch(
         qs.length ? `${baseUrl}?${qs.join("&")}` : baseUrl
       );
+
       eggs = await response.json();
     } catch (err) {
       console.log(err);
@@ -49,6 +38,32 @@
     } finally {
       eggsLoading = false;
     }
+  };
+
+  const fetchEggs = async () => {
+    page = 1;
+    currentFilter = [];
+    if (filter.symbol) {
+      currentFilter.push(`symbol=${filter.symbol}`);
+    }
+    if (filter.perfect) {
+      currentFilter.push(`perfect=${filter.perfect}`);
+    }
+    if (filter.xChromo) {
+      currentFilter.push(`xChromo=${filter.xChromo}`);
+    }
+    if (filter.yChromo) {
+      currentFilter.push(`yChromo=${filter.yChromo}`);
+    }
+    if (sort) {
+      currentFilter.push(`sort=${sort}`);
+    }
+    await doFetch(currentFilter);
+  };
+
+  const updatePage = async () => {
+    console.log("updatePage");
+    await doFetch([...currentFilter, `page=${page}`]);
   };
 </script>
 
@@ -68,7 +83,7 @@
     <p>Error: {eggsError}</p>
   {:else}
     <Modal>
-      <EggList {eggs} />
+      <EggList {eggs} bind:page on:updatePage={updatePage} />
     </Modal>
   {/if}
 </main>
