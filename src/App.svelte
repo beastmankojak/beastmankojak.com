@@ -22,7 +22,6 @@
       : "http://localhost:3000/derp-eggs/";
 
   const doFetch = async (qs) => {
-    console.log(qs);
     try {
       eggsLoading = true;
       eggsError = "";
@@ -62,7 +61,6 @@
   };
 
   const updatePage = async () => {
-    console.log("updatePage");
     await doFetch([...currentFilter, `page=${page}`]);
   };
 </script>

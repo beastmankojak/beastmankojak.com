@@ -16,7 +16,6 @@
   };
 
   const updatePage = () => {
-    console.log("dispatch updatePage");
     dispatch("updatePage");
   };
 </script>
