@@ -3,6 +3,7 @@
   export let perfect;
   export let xChromo;
   export let yChromo;
+  export let parentPerfect;
   export let sort;
 </script>
 
@@ -51,6 +52,29 @@
     <li>
       <label for="parentTextbox">Parent</label>
       <input type="text" id="parentTextbox" bind:value={yChromo} />
+    </li>
+    <li>
+      <label for="parentPerfectDropdown">Parent Perfect</label>
+      <select bind:value={parentPerfect} id="parentPerfectDropdown">
+        <option value="">Any</option>
+        <option value="no">No</option>
+        <option value="yes">Yes</option>
+        <option value="redneck">Redneck</option>
+        <option value="dave">Dave</option>
+        <option value="stoner">Stoner</option>
+        <option value="dj">DJ</option>
+        <option value="diety">Diety</option>
+        <option value="astro">Astro</option>
+        <option value="viking">Viking</option>
+        <option value="ghost">Ghost</option>
+        <option value="corpo">Corpo</option>
+        <option value="magic">Magic</option>
+        <option value="monk">Monk</option>
+        <option value="ninja">Ninja</option>
+        <option value="scientist">Mad Scientist</option>
+        <option value="cyborg">Cyborg</option>
+        <option value="buff">Buff</option>
+      </select>
     </li>
     <li>
       <label for="sortDropdown">Sort</label>

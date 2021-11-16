@@ -11,6 +11,7 @@
     perfect: "",
     xChromo: "",
     yChromo: "",
+    parentPerfect: "",
   };
   let sort = "eggIdAsc";
   let page = 1;
@@ -54,6 +55,9 @@
     if (filter.yChromo) {
       currentFilter.push(`yChromo=${filter.yChromo}`);
     }
+    if (filter.parentPerfect) {
+      currentFilter.push(`parentPerfect=${filter.parentPerfect}`);
+    }
     if (sort) {
       currentFilter.push(`sort=${sort}`);
     }
@@ -73,6 +77,7 @@
     bind:perfect={filter.perfect}
     bind:xChromo={filter.xChromo}
     bind:yChromo={filter.yChromo}
+    bind:parentPerfect={filter.parentPerfect}
     bind:sort
   />
   {#if eggsLoading}
