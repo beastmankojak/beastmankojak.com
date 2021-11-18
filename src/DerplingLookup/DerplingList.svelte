@@ -1,8 +1,8 @@
 <script>
-  export let eggs;
-  import Egg from "./EggPreview.svelte";
-  import EggDetails from "./EggDetails.svelte";
-  import Pager from "./Pager.svelte";
+  export let derplings;
+  import Derpling from "./DerplingPreview.svelte";
+  import DerplingDetails from "./DerplingDetails.svelte";
+  import Pager from "../Pager.svelte";
   import { getContext } from "svelte";
   import { createEventDispatcher } from "svelte";
 
@@ -11,8 +11,8 @@
   const dispatch = createEventDispatcher();
   const { open } = getContext("simple-modal");
 
-  const showEgg = (egg) => {
-    open(EggDetails, { egg });
+  const showDerpling = (derpling) => {
+    open(DerplingDetails, { derpling });
   };
 
   const updatePage = () => {
@@ -20,16 +20,16 @@
   };
 </script>
 
-{#if eggs.length > 0}
-  <Pager on:change={updatePage} bind:page length={eggs.length} />
+{#if derplings.length > 0}
+  <Pager on:change={updatePage} bind:page length={derplings.length} />
   <ul>
-    {#each eggs as egg}
-      <li on:click={() => showEgg(egg)}><Egg {egg} /></li>
+    {#each derplings as derpling}
+      <li on:click={() => showDerpling(derpling)}><Derpling {derpling} /></li>
     {/each}
   </ul>
-  <Pager on:change={updatePage} bind:page length={eggs.length} />
+  <Pager on:change={updatePage} bind:page length={derplings.length} />
 {:else}
-  <p>No eggs found.</p>
+  <p>No derplings found.</p>
 {/if}
 
 <style>
