@@ -19,6 +19,7 @@
     pedestal: "",
     basecolor: "",
     dadbodTag: "",
+    twins: "",
   };
   let sort = "derplingIdAsc";
   let page = 1;
@@ -84,6 +85,9 @@
     if (filter.dadbodTag) {
       currentFilter.push(`dadbodTag=${filter.dadbodTag}`);
     }
+    if (filter.twins) {
+      currentFilter.push(`twins=${filter.twins}`);
+    }
     if (sort) {
       currentFilter.push(`sort=${sort}`);
     }
@@ -112,6 +116,7 @@
     bind:pedestal={filter.pedestal}
     bind:basecolor={filter.basecolor}
     bind:dadbodTag={filter.dadbodTag}
+    bind:twins={filter.twins}
   />
   {#if derplingsLoading}
     <h2>Loading...</h2>

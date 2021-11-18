@@ -14,6 +14,7 @@
   export let pedestal;
   export let basecolor;
   export let dadbodTag;
+  export let twins;
 
   const fetchAttributes = async () => {
     const response = await fetch(`${baseUrl}/attributes/`);
@@ -126,6 +127,14 @@
           attributes={attrs.attributes.dadbodTag}
         />
       </li>
+      <li>
+        <DerplingDropdown
+          bind:value={twins}
+          id="twinsDropdown"
+          label="Twins"
+          attributes={attrs.attributes.twins}
+        />
+      </li>
     </ul>
     <button on:click>LFG</button>
   </div>
@@ -145,8 +154,5 @@
   }
   li {
     list-style-type: none;
-  }
-  label {
-    display: inline;
   }
 </style>
