@@ -20,6 +20,22 @@
     const response = await fetch(`${baseUrl}/attributes/`);
     return await response.json();
   };
+
+  const reset = () => {
+    aura = "";
+    beak = "";
+    body = "";
+    eyes = "";
+    head = "";
+    cargo = "";
+    color = "";
+    gender = "";
+    eggshell = "";
+    pedestal = "";
+    basecolor = "";
+    dadbodTag = "";
+    twins = "";
+  };
 </script>
 
 {#await fetchAttributes()}
@@ -137,6 +153,7 @@
       </li>
     </ul>
     <button on:click>LFG</button>
+    <button on:click={reset}>Reset</button>
   </div>
 {:catch err}
   <p>Error: {err}</p>
