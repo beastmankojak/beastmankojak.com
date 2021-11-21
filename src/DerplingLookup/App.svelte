@@ -21,9 +21,10 @@
     dadbodTag: "",
     twins: "",
   };
-  let sort = "derplingIdAsc";
+  let sort = "hatchAsc";
   let page = 1;
   let currentFilter;
+  let traits = {};
 
   const baseUrl =
     process.env.NODE_ENV === "prod"
@@ -117,6 +118,8 @@
     bind:basecolor={filter.basecolor}
     bind:dadbodTag={filter.dadbodTag}
     bind:twins={filter.twins}
+    bind:sort
+    bind:traits
   />
   {#if derplingsLoading}
     <h2>Loading...</h2>
@@ -124,7 +127,7 @@
     <p>Error: {derplingsError}</p>
   {:else}
     <Modal>
-      <DerplingList {derplings} bind:page on:updatePage={updatePage} />
+      <DerplingList {derplings} {traits} bind:page on:updatePage={updatePage} />
     </Modal>
   {/if}
 </main>

@@ -15,10 +15,13 @@
   export let basecolor;
   export let dadbodTag;
   export let twins;
+  export let sort;
+  export let traits;
 
   const fetchAttributes = async () => {
     const response = await fetch(`${baseUrl}/attributes/`);
-    return await response.json();
+    traits = await response.json();
+    return traits;
   };
 
   const reset = () => {
@@ -151,7 +154,25 @@
           attributes={attrs.attributes.twins}
         />
       </li>
+      <li>
+        <label for="sortDropdown">Sort</label>
+        <select bind:value={sort} id="sortDropdown">
+          <option value="hatchAsc">Hatch order ⬆️</option>
+          <option value="hatchDesc">Hatch order ⬇️</option>
+          <option value="derplingIdAsc">Derpling id ⬆️</option>
+          <option value="derplingIdDesc">Derpling id ⬇️</option>
+          <option value="rankAsc">Rank ⬆️</option>
+          <option value="rankDesc">Rank ⬇️</option>
+        </select>
+      </li>
     </ul>
+    {#if /rank/.test(sort)}
+      <div class="warning">
+        🚨 Rank ordering is currently experimental, and is currently ignoring
+        the following traits: sex, eggshell, basecolor, dadbodTag. Use at your
+        own risk. 🚨
+      </div>
+    {/if}
     <button on:click>LFG</button>
     <button on:click={reset}>Reset</button>
   </div>
@@ -171,5 +192,13 @@
   }
   li {
     list-style-type: none;
+  }
+  .warning {
+    font-weight: bold;
+    color: darkred;
+    margin-bottom: 1em;
+  }
+  label {
+    display: inline;
   }
 </style>

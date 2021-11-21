@@ -1,5 +1,6 @@
 <script>
   export let derplings;
+  export let traits;
   import Derpling from "./DerplingPreview.svelte";
   import DerplingDetails from "./DerplingDetails.svelte";
   import Pager from "../Pager.svelte";
@@ -12,7 +13,7 @@
   const { open } = getContext("simple-modal");
 
   const showDerpling = (derpling) => {
-    open(DerplingDetails, { derpling });
+    open(DerplingDetails, { derpling, traits });
   };
 
   const updatePage = () => {
