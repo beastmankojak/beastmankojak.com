@@ -17,6 +17,7 @@
   export let twins;
   export let sort;
   export let traits;
+  export let derplingId;
 
   const fetchAttributes = async () => {
     const response = await fetch(`${baseUrl}/attributes/`);
@@ -165,14 +166,18 @@
           <option value="rankDesc">Rank ⬇️</option>
         </select>
       </li>
+      <li>
+        <label for="derplingId">Derpling Id</label>
+        <input type="text" id="derplingId" bind:value={derplingId} />
+      </li>
     </ul>
-    {#if /rank/.test(sort)}
-      <div class="warning">
-        🚨 Rank ordering is currently experimental, and is currently ignoring
-        the following traits: sex, eggshell, basecolor, dadbodTag. Use at your
-        own risk. 🚨
-      </div>
-    {/if}
+    <div class="warning">
+      🚨 Ranking is currently experimental, trust it at your own peril. The
+      current algorithm compresses the trait rarity range from [0 - 1] to [0.1 -
+      1] to avoid the multiplicative inverse hockey stick for very rare traits
+      and ignores the following traits all together: sex, eggshell, basecolor,
+      dadbodTag. 🚨
+    </div>
     <button on:click>LFG</button>
     <button on:click={reset}>Reset</button>
   </div>

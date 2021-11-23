@@ -36,7 +36,7 @@
       {display("dadbodTag", derpling.dadbodTag)}
     </li>
     <li><span>&nbsp;Rank:</span> {derpling.rank}</li>
-    <li><span>&nbsp;Rank:</span> {derpling.rarityScore.toFixed(2)}</li>
+    <li><span>&nbsp;Rarity score:</span> {derpling.rarityScore.toFixed(2)}</li>
   </ul>
 </div>
 

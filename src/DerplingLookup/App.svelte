@@ -22,6 +22,7 @@
     twins: "",
   };
   let sort = "hatchAsc";
+  let derplingId = "";
   let page = 1;
   let currentFilter;
   let traits = {};
@@ -47,52 +48,71 @@
     }
   };
 
+  const doFetchOne = async (derplingId) => {
+    try {
+      derplingsLoading = true;
+      derplingsError = "";
+      const response = await fetch(`${baseUrl}/${derplingId}`);
+      derplings = [(await response.json()).derpling];
+    } catch (err) {
+      console.log(err);
+      derplingsError = err.message;
+    } finally {
+      derplingsLoading = false;
+    }
+  };
+
   const fetchDerplings = async () => {
     page = 1;
     currentFilter = [];
-    if (filter.aura) {
-      currentFilter.push(`aura=${filter.aura}`);
+
+    if (derplingId) {
+      await doFetchOne(derplingId);
+    } else {
+      if (filter.aura) {
+        currentFilter.push(`aura=${filter.aura}`);
+      }
+      if (filter.beak) {
+        currentFilter.push(`beak=${filter.beak}`);
+      }
+      if (filter.body) {
+        currentFilter.push(`body=${filter.body}`);
+      }
+      if (filter.eyes) {
+        currentFilter.push(`eyes=${filter.eyes}`);
+      }
+      if (filter.head) {
+        currentFilter.push(`head=${filter.head}`);
+      }
+      if (filter.cargo) {
+        currentFilter.push(`cargo=${filter.cargo}`);
+      }
+      if (filter.color) {
+        currentFilter.push(`color=${filter.color}`);
+      }
+      if (filter.gender) {
+        currentFilter.push(`gender=${filter.gender}`);
+      }
+      if (filter.eggshell) {
+        currentFilter.push(`eggshell=${filter.eggshell}`);
+      }
+      if (filter.pedestal) {
+        currentFilter.push(`pedestal=${filter.pedestal}`);
+      }
+      if (filter.basecolor) {
+        currentFilter.push(`basecolor=${filter.basecolor}`);
+      }
+      if (filter.dadbodTag) {
+        currentFilter.push(`dadbodTag=${filter.dadbodTag}`);
+      }
+      if (filter.twins) {
+        currentFilter.push(`twins=${filter.twins}`);
+      }
+      if (sort) {
+        currentFilter.push(`sort=${sort}`);
+      }
+      await doFetch(currentFilter);
     }
-    if (filter.beak) {
-      currentFilter.push(`beak=${filter.beak}`);
-    }
-    if (filter.body) {
-      currentFilter.push(`body=${filter.body}`);
-    }
-    if (filter.eyes) {
-      currentFilter.push(`eyes=${filter.eyes}`);
-    }
-    if (filter.head) {
-      currentFilter.push(`head=${filter.head}`);
-    }
-    if (filter.cargo) {
-      currentFilter.push(`cargo=${filter.cargo}`);
-    }
-    if (filter.color) {
-      currentFilter.push(`color=${filter.color}`);
-    }
-    if (filter.gender) {
-      currentFilter.push(`gender=${filter.gender}`);
-    }
-    if (filter.eggshell) {
-      currentFilter.push(`eggshell=${filter.eggshell}`);
-    }
-    if (filter.pedestal) {
-      currentFilter.push(`pedestal=${filter.pedestal}`);
-    }
-    if (filter.basecolor) {
-      currentFilter.push(`basecolor=${filter.basecolor}`);
-    }
-    if (filter.dadbodTag) {
-      currentFilter.push(`dadbodTag=${filter.dadbodTag}`);
-    }
-    if (filter.twins) {
-      currentFilter.push(`twins=${filter.twins}`);
-    }
-    if (sort) {
-      currentFilter.push(`sort=${sort}`);
-    }
-    await doFetch(currentFilter);
   };
 
   const updatePage = async () => {
@@ -120,6 +140,7 @@
     bind:twins={filter.twins}
     bind:sort
     bind:traits
+    bind:derplingId
   />
   {#if derplingsLoading}
     <h2>Loading...</h2>
