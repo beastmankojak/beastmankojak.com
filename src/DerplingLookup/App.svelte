@@ -39,7 +39,11 @@
       const response = await fetch(
         qs.length ? `${baseUrl}/?${qs.join("&")}` : baseUrl
       );
-      derplings = await response.json();
+      if (response.ok) {
+        derplings = await response.json();
+      } else {
+        derplingsError = await response.text();
+      }
     } catch (err) {
       console.log(err);
       derplingsError = err.message;
@@ -53,7 +57,16 @@
       derplingsLoading = true;
       derplingsError = "";
       const response = await fetch(`${baseUrl}/${derplingId}`);
-      derplings = [(await response.json()).derpling];
+      if (response.ok) {
+        const { derpling } = (await response.json()) || {};
+        if (derpling) {
+          derplings = [derpling];
+        } else {
+          derplingsError = "Derpling not found";
+        }
+      } else {
+        derplingsError = await response.text();
+      }
     } catch (err) {
       console.log(err);
       derplingsError = err.message;

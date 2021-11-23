@@ -39,6 +39,14 @@
     basecolor = "";
     dadbodTag = "";
     twins = "";
+    derplingId = "";
+  };
+
+  const handleKeypress = (e) => {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      document.getElementById("lfg").click();
+    }
   };
 </script>
 
@@ -168,7 +176,12 @@
       </li>
       <li>
         <label for="derplingId">Derpling Id</label>
-        <input type="text" id="derplingId" bind:value={derplingId} />
+        <input
+          type="text"
+          id="derplingId"
+          bind:value={derplingId}
+          on:keypress={handleKeypress}
+        />
       </li>
     </ul>
     <div class="warning">
@@ -178,7 +191,7 @@
       and ignores the following traits all together: sex, eggshell, basecolor,
       dadbodTag. 🚨
     </div>
-    <button on:click>LFG</button>
+    <button on:click id="lfg">LFG</button>
     <button on:click={reset}>Reset</button>
   </div>
 {:catch err}
