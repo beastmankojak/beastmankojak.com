@@ -188,8 +188,7 @@
       🚨 Ranking is currently experimental, trust it at your own peril. The
       current algorithm compresses the trait rarity range from [0 - 1] to [0.02
       - 1] to avoid the multiplicative inverse hockey stick for very rare traits
-      and ignores the following traits all together: sex, basecolor, dadbodTag.
-      🚨
+      and ignores the following traits all together: sex, basecolor. 🚨
     </div>
     <button on:click id="lfg">LFG</button>
     <button on:click={reset}>Reset</button>
