@@ -1,5 +1,6 @@
 <script>
   import DerplingDropdown from "./DerplingDropdown.svelte";
+  import { formatDate } from "../utils";
   export let baseUrl;
 
   export let aura;
@@ -55,8 +56,9 @@
 {:then attrs}
   <div>
     <p>
-      Total derplings hatched: {attrs.stats.totalCount}, last updated at {attrs
-        .stats.lastUpdate}
+      Total derplings hatched: {attrs.stats.totalCount}, last updated at {formatDate(
+        attrs.stats.lastUpdate
+      )}
     </p>
     <ul>
       <li>
@@ -188,7 +190,8 @@
       🚨 Ranking is currently experimental, trust it at your own peril. The
       current algorithm compresses the trait rarity range from [0 - 1] to [0.02
       - 1] to avoid the multiplicative inverse hockey stick for very rare traits
-      and ignores the following traits all together: sex, basecolor. 🚨
+      and ignores the following traits all together: sex, basecolor, dadbodTag.
+      🚨
     </div>
     <button on:click id="lfg">LFG</button>
     <button on:click={reset}>Reset</button>

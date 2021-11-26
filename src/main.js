@@ -1,5 +1,6 @@
 import EggLookupApp from './EggLookup/App.svelte';
 import DerplingLookupApp from './DerplingLookup/App.svelte';
+import DerplingRarityApp from './DerplingRarity/App.svelte';
 
 const appSelector = (appType) => {
 	console.log('appType', appType);
@@ -15,6 +16,14 @@ const appSelector = (appType) => {
 		console.log('Derpling lookup');
 		return new DerplingLookupApp({
 			target: document.body,
+			props: {}
+		});
+	}
+
+	if (appType ==='derplingRarity') {
+		console.log('Derpling rarity');
+		return new DerplingRarityApp({
+		  target: document.body,
 			props: {}
 		});
 	}
