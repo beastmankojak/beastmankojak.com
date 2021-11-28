@@ -60,6 +60,7 @@
         attrs.stats.lastUpdate
       )}
     </p>
+    <p><a href="rarity.html">Trait rarity chart</a></p>
     <ul>
       <li>
         <DerplingDropdown
