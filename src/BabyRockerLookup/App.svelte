@@ -114,13 +114,13 @@
   <BabyRockerFilter
     {baseUrl}
     on:click={fetchRockerss}
-    bind:aura={filter.head}
+    bind:hat={filter.hat}
     bind:body={filter.body}
     bind:eyes={filter.eyes}
-    bind:head={filter.mouth}
-    bind:cargo={filter.clothes}
-    bind:color={filter.accessory}
-    bind:gender={filter.background}
+    bind:mouth={filter.mouth}
+    bind:clothes={filter.clothes}
+    bind:accessory={filter.accessory}
+    bind:background={filter.background}
     bind:sort
     bind:traits
     bind:name
