@@ -3,6 +3,7 @@ import DerplingLookupApp from './DerplingLookup/App.svelte';
 import DerplingRarityApp from './DerplingRarity/App.svelte';
 import BabyRockerLookupApp from './BabyRockerLookup/App.svelte';
 import BabyRockerRarityApp from './BabyRockerRarity/App.svelte';
+import BacSpaceshipLookupApp from './BacSpaceshipLookup/App.svelte';
 import BacSpaceshipRarityApp from './BacSpaceshipRarity/App.svelte';
 
 const appSelector = (appType) => {
@@ -42,6 +43,14 @@ const appSelector = (appType) => {
 	if(appType === 'babyRockerRarity') {
 		console.log('Baby rocker rarity');
 		return new BabyRockerRarityApp({
+			target: document.body,
+			props: {}
+		});
+	}
+
+	if(appType === 'bacSpaceship') {
+		console.log('BAC Spaceship lookup');
+		return new BacSpaceshipLookupApp({
 			target: document.body,
 			props: {}
 		});

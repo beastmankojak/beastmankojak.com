@@ -144,11 +144,6 @@
   li {
     list-style-type: none;
   }
-  .warning {
-    font-weight: bold;
-    color: darkred;
-    margin-bottom: 1em;
-  }
   label {
     display: inline;
   }
