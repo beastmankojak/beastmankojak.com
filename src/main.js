@@ -5,6 +5,8 @@ import BabyRockerLookupApp from './BabyRockerLookup/App.svelte';
 import BabyRockerRarityApp from './BabyRockerRarity/App.svelte';
 import BacSpaceshipLookupApp from './BacSpaceshipLookup/App.svelte';
 import BacSpaceshipRarityApp from './BacSpaceshipRarity/App.svelte';
+import BacChristmasLookupApp from './BacChristmasLookup/App.svelte';
+import BacChristmasRarityApp from './BacChristmasRarity/App.svelte';
 
 const appSelector = (appType) => {
 	console.log('appType', appType);
@@ -59,6 +61,22 @@ const appSelector = (appType) => {
 	if(appType === 'bacSpaceshipRarity') {
 		console.log('BAC Spaceship Rarity');
 		return new BacSpaceshipRarityApp({
+			target: document.body,
+			props: {}
+		});
+	}
+
+	if(appType === 'bacChristmas') {
+		console.log('BAC Christmas lookup');
+		return new BacChristmasLookupApp({
+			target: document.body,
+			props: {}
+		});
+	}
+
+	if (appType === 'bacChristmasRarity') {
+		console.log('BAC Christmas rarity');
+		return new BacChristmasRarityApp({
 			target: document.body,
 			props: {}
 		});
