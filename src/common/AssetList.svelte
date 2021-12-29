@@ -11,12 +11,20 @@
   export let traitList;
   export let project;
   export let alt;
+  export let policyId;
 
   const dispatch = createEventDispatcher();
   const { open } = getContext("simple-modal");
 
   const showAsset = (asset) => {
-    open(AssetDetails, { asset, allAttributes, traitList, project, alt });
+    open(AssetDetails, {
+      asset,
+      allAttributes,
+      traitList,
+      project,
+      alt,
+      policyId,
+    });
   };
 
   const updatePage = () => {

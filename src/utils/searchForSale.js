@@ -1,4 +1,4 @@
-const searchForSale = async (project, name) => {
+const searchForSale = async ({ project, name, verified = true, policyId }) => {
   const response = await fetch("https://api.cnft.io/market/listings", {
     method: "POST",
     headers: {
@@ -7,12 +7,12 @@ const searchForSale = async (project, name) => {
     body: JSON.stringify({
       search: name,
       types: ["listing", "auction", "offer"],
-      project,
+      ...(project ? { project } : {}),
       sort: { price: -1 },
       priceMin: null,
       priceMax: null,
       page: 1,
-      verified: true,
+      verified,
       nsfw: false,
       sold: false,
     }),
@@ -26,10 +26,10 @@ const searchForSale = async (project, name) => {
   const [result] = results;
   const {
     _id,
-    asset: { assetId },
+    asset: { assetId, policyId: cnftPolicyId },
     price,
   } = result || { asset: {} };
-  return result && assetId === name
+  return result && assetId === name && (!policyId || policyId === cnftPolicyId)
     ? {
         forSale: true,
         href: `https://cnft.io/token/${_id}`,

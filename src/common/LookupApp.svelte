@@ -11,6 +11,7 @@
   export let assetTag;
   export let title;
   export let totalCount;
+  export let policyId;
 
   let assetsLoading = false;
   let assetsError = "";
@@ -117,6 +118,7 @@
         {traitList}
         {project}
         {alt}
+        {policyId}
         bind:page
         on:updatePage={updatePage}
       />

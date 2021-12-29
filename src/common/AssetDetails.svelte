@@ -6,6 +6,7 @@
   export let traitList;
   export let project;
   export let alt;
+  export let policyId;
 </script>
 
 <div>
@@ -22,7 +23,7 @@
     <li><span>&nbsp;Rarity score:</span> {asset.rarityScore.toFixed(2)}</li>
     <li>
       <span>&nbsp;For sale:</span>
-      {#await searchForSale(project, asset.name)}
+      {#await searchForSale({ name: asset.name, verified: false, policyId })}
         Loading...
       {:then listing}{#if listing.forSale}
           <a href={listing.href} target="_blank">{listing.price} ₳</a>
