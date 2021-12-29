@@ -51,7 +51,7 @@
 {:then rarity}
   <h1>Unofficial BAC Spaceship rarity chart</h1>
   <div>
-    <p>This is an unofficial, community-driven baby rocker rarity chart.</p>
+    <p>This is an unofficial, community-driven BAC Spaceship rarity chart.</p>
   </div>
   <Totals totals={rarity.stats} />
 
