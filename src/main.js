@@ -7,6 +7,8 @@ import BacSpaceshipLookupApp from './BacSpaceshipLookup/App.svelte';
 import BacSpaceshipRarityApp from './BacSpaceshipRarity/App.svelte';
 import BacChristmasLookupApp from './BacChristmasLookup/App.svelte';
 import BacChristmasRarityApp from './BacChristmasRarity/App.svelte';
+import MuggosLookupApp from './Muggos/Lookup.svelte';
+import MuggosRarityApp from './Muggos/Rarity.svelte';
 
 const appSelector = (appType) => {
 	console.log('appType', appType);
@@ -77,6 +79,22 @@ const appSelector = (appType) => {
 	if (appType === 'bacChristmasRarity') {
 		console.log('BAC Christmas rarity');
 		return new BacChristmasRarityApp({
+			target: document.body,
+			props: {}
+		});
+	}
+
+	if(appType === 'muggos') {
+		console.log('Muggos lookup');
+		return new MuggosLookupApp({
+			target: document.body,
+			props: {}
+		});
+	}
+
+	if (appType === 'muggosRarity') {
+		console.log('Muggos rarity');
+		return new MuggosRarityApp({
 			target: document.body,
 			props: {}
 		});
