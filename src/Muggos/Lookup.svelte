@@ -1,5 +1,5 @@
 <script>
-  import LookupApp from "../common/LookupApp.svelte";
+  import LookupApp from "@beastmankojak/cnft-svelte-components/components/LookupApp/App.svelte";
 
   const traitList = [
     "Muggo Back",

@@ -5,8 +5,8 @@ import BabyRockerLookupApp from './BabyRockerLookup/App.svelte';
 import BabyRockerRarityApp from './BabyRockerRarity/App.svelte';
 import BacSpaceshipLookupApp from './BacSpaceshipLookup/App.svelte';
 import BacSpaceshipRarityApp from './BacSpaceshipRarity/App.svelte';
-import BacChristmasLookupApp from './BacChristmasLookup/App.svelte';
-import BacChristmasRarityApp from './BacChristmasRarity/App.svelte';
+import BacChristmasLookupApp from './BacChristmas/LookupApp.svelte';
+import BacChristmasRarityApp from './BacChristmas/RarityApp.svelte';
 import MuggosLookupApp from './Muggos/Lookup.svelte';
 import MuggosRarityApp from './Muggos/Rarity.svelte';
 

@@ -1,5 +1,5 @@
 <script>
-  import RarityApp from "../common/RarityApp.svelte";
+  import RarityApp from "@beastmankojak/cnft-svelte-components/components/RarityApp/App.svelte";
 
   const baseUrl =
     process.env.NODE_ENV === "prod"

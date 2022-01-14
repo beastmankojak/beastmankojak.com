@@ -1,8 +1,8 @@
 <script>
   import Modal from "svelte-simple-modal";
-  import AssetFilter from "./AssetFilter.svelte";
-  import AssetList from "./AssetList.svelte";
-  import { filter } from "../stores/assetLookupStore";
+  import AssetFilter from "@beastmankojak/cnft-svelte-components/components/LookupApp/AssetFilter.svelte";
+  import AssetList from "@beastmankojak/cnft-svelte-components/components/LookupApp/AssetList.svelte";
+  import { filter } from '@beastmankojak/cnft-svelte-components/stores/assetLookupStore';
 
   export let traitList;
   export let project;
