@@ -30,6 +30,8 @@
   const title = "Muggo Lookup";
   const totalCount = 1200;
   const policyId = "c263bfde10889d62d63b158bed9906795226c044138ee490f1b785d4";
+  const verified = true;
+  const assetTransform = (assetName) => assetName.replace(' #', '');
 </script>
 
 <LookupApp
@@ -41,4 +43,6 @@
   {title}
   {totalCount}
   {policyId}
+  {verified}
+  {assetTransform}
 />
