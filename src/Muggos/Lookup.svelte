@@ -32,6 +32,7 @@
   const policyId = "c263bfde10889d62d63b158bed9906795226c044138ee490f1b785d4";
   const verified = true;
   const assetTransform = (assetName) => assetName.replace(' #', '');
+  const disclaimer = 'Rarity shown here is not final.  The Muggos are currently in the early stages and rarity tables will not be final until all Muggos are minted!  This is for entertainment purposes only!';
 </script>
 
 <LookupApp
@@ -45,4 +46,5 @@
   {policyId}
   {verified}
   {assetTransform}
+  {disclaimer}
 />
