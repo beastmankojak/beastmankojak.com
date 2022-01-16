@@ -15,6 +15,7 @@
     "Muggo Background",
     "Muggo Foreground",
     "Muggo Gameplay Proficiency",
+    "Color Matched",
     "Sidekick",
     "Sidekick Gem",
     "Sidekick Ears",
