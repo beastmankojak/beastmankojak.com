@@ -9,6 +9,8 @@ import BacChristmasLookupApp from './BacChristmas/LookupApp.svelte';
 import BacChristmasRarityApp from './BacChristmas/RarityApp.svelte';
 import MuggosLookupApp from './Muggos/Lookup.svelte';
 import MuggosRarityApp from './Muggos/Rarity.svelte';
+import DrapesLookupApp from './Drapes/Lookup.svelte';
+import DrapesRarityApp from './Drapes/Rarity.svelte';
 
 const appSelector = (appType) => {
 	console.log('appType', appType);
@@ -95,6 +97,22 @@ const appSelector = (appType) => {
 	if (appType === 'muggosRarity') {
 		console.log('Muggos rarity');
 		return new MuggosRarityApp({
+			target: document.body,
+			props: {}
+		});
+	}
+
+	if (appType === 'drapes') {
+		console.log('Drapes lookup');
+		return new DrapesLookupApp({
+			target: document.body,
+			props: {}
+		});
+	}
+
+	if (appType === 'drapesRarity') {
+		console.log('Drapes rarity');
+		return new DrapesRarityApp({
 			target: document.body,
 			props: {}
 		});
