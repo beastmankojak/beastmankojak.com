@@ -18,6 +18,7 @@
   const verified = true;
   const assetTransform = (assetName) => `DRAPE${assetName.slice(-5)}`;
   const disclaimer = 'Stats/rarities will change as more Drapes are minted';
+  const placeholder = 'drape-loading.png';
 </script>
 
 <LookupApp
@@ -32,4 +33,5 @@
   {verified}
   {assetTransform}
   {disclaimer}
+  {placeholder}
 />
