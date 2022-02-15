@@ -21,7 +21,7 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
-    "@beastmankojak/cnft-svelte-components": "^0.0.7",
+    "@beastmankojak/cnft-svelte-components": "^0.0.10",
     "sirv-cli": "^1.0.0",
     "svelte-simple-modal": "^1.1.1"
   }
