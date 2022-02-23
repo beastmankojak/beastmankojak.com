@@ -12,6 +12,7 @@ import MuggosRarityApp from './Muggos/Rarity.svelte';
 import DrapesLookupApp from './Drapes/Lookup.svelte';
 import DrapesRarityApp from './Drapes/Rarity.svelte';
 import HorsesLookupApp from './Horses/Lookup.svelte';
+import HorsesRarityApp from './Horses/Rarity.svelte';
 
 const appMap = {
 	egg: EggLookupApp,
@@ -28,6 +29,7 @@ const appMap = {
 	drapes: DrapesLookupApp,
 	drapesRarity: DrapesRarityApp,
 	horses: HorsesLookupApp,
+	horsesRarity: HorsesRarityApp,
 };
 
 const appSelector = (appType) => {
