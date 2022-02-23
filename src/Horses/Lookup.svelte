@@ -37,6 +37,7 @@
 
 </script>
 
+<div>
 <LookupApp
   {traitList}
   {numericTraitList}
@@ -52,3 +53,11 @@
   {placeholder}
   {customSort}
 />
+</div>
+
+<style>
+  div :global(.wrap ul :nth-last-child(3)),
+  div :global(.wrap ul :nth-last-child(10)) {
+    margin-top: 10px;
+  }
+</style>
