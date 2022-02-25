@@ -6,8 +6,10 @@
   ];
 
   const numericTraitList = [
-    'Age', 'acceleration', 'agility', 'endurance', 'speed', 'stamina', 'total'
+    'Age', 'acceleration', 'agility', 'endurance', 'speed', 'stamina', 'total', 'listing.price'
   ];
+
+  const displayTraitList = [...traitList, ...numericTraitList.slice(0, -1)];
 
   const project = "EquineNFT Pioneer Horses";
   const alt = "Equine Horse";
@@ -32,6 +34,8 @@
       { value: 'rankDesc', label: 'Rank ⬇️' },
       { value: 'totalAsc', label: 'Stats Total ⬆️' },
       { value: 'totalDesc', label: 'Stats Total ⬇️' },
+      { value: 'priceAsc', label: 'Price ⬆️' },
+      { value: 'priceDesc', label: 'Price ⬇️' },
     ]
   }
 
@@ -41,6 +45,7 @@
 <LookupApp
   {traitList}
   {numericTraitList}
+  {displayTraitList}
   {project}
   {alt}
   {baseUrl}
@@ -56,8 +61,8 @@
 </div>
 
 <style>
-  div :global(.wrap ul :nth-last-child(3)),
-  div :global(.wrap ul :nth-last-child(10)) {
+  div :global(.content ul :nth-last-child(3)),
+  div :global(.content ul :nth-last-child(10)) {
     margin-top: 10px;
   }
 </style>
