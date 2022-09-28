@@ -22,6 +22,7 @@
   const totalCount = 300;
   const policyId = "2f641f799b2a8fde7a4d3659765f5bbee2f853db32b86668917e3c77";
   const placeholder = 'bac-christmas-loading.png';
+  const imageUrl = (asset) => `https://beastmankojak.nyc3.cdn.digitaloceanspaces.com/bac/bacChristmas/ipfs/${asset.image.replace('ipfs://', '')}/200.png`;
 </script>
 
 <LookupApp
@@ -34,4 +35,5 @@
   {totalCount}
   {policyId}
   {placeholder}
+  {imageUrl}
 />
