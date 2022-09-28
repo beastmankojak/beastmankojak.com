@@ -24,6 +24,7 @@
   const verified = true;
   // const assetTransform = (assetName) => `BACSpaceships${assetName.slice(-5, -1)}`;
   const placeholder = 'bac-rock-loading.png';
+  const imageUrl = (asset) => `https://beastmankojak.nyc3.cdn.digitaloceanspaces.com/bac/babyRockers/ipfs/${asset.image.replace('ipfs://', '')}/200.png`;
 </script>
 
 <LookupApp
@@ -37,4 +38,5 @@
   {policyId}
   {verified}
   {placeholder}
+  {imageUrl}
 />
