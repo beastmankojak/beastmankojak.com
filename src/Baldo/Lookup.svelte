@@ -19,6 +19,7 @@
   // const assetTransform = (assetName) => `PRED${assetName.slice(-5)}`;
   const disclaimer = 'Stats/rarities will change as more Baldos are minted';
   const placeholder = 'baldo-loading.png';
+  const imageUrl = (asset) => `https://beastmankojak.nyc3.cdn.digitaloceanspaces.com/derp/baldo/ipfs/${asset.image.replace('ipfs://', '')}/200.png`;
 </script>
 
 <LookupApp
@@ -31,4 +32,5 @@
   {totalCount}
   {disclaimer}
   {placeholder}
+  {imageUrl}
 />
