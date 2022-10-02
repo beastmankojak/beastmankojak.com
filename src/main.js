@@ -15,6 +15,8 @@ import HorsesLookupApp from './Horses/Lookup.svelte';
 import HorsesRarityApp from './Horses/Rarity.svelte';
 import PredLookupApp from './Pred/Lookup.svelte';
 import PredRarityApp from './Pred/Rarity.svelte';
+import BaldoLookupApp from './Baldo/Lookup.svelte';
+import BaldoRarityApp from './Baldo/Rarity.svelte';
 
 const appMap = {
 	egg: EggLookupApp,
@@ -34,6 +36,8 @@ const appMap = {
 	horsesRarity: HorsesRarityApp,
 	pred: PredLookupApp,
 	predRarity: PredRarityApp,
+	baldo: BaldoLookupApp,
+	baldoRarity: BaldoRarityApp
 };
 
 const appSelector = (appType) => {
